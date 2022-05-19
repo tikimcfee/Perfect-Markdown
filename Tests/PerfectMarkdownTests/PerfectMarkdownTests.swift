@@ -4,9 +4,7 @@ import XCTest
 class PerfectMarkdownTests: XCTestCase {
 
   override static func setUp() {
-		#if swift(>=5.0)
     MarkdownRenderer.defaultExtensionOptions = MarkdownExtensionOptions.default
-		#endif
   }
 
   func testTitle () {
@@ -52,25 +50,10 @@ class PerfectMarkdownTests: XCTestCase {
       XCTAssertEqual( a, b)
   }
 
-	#if swift(>=5.0)
   func testXHTMLRendering() {
     XCTAssertEqual(
       "# Header\n----".markdownToXHTML ?? "",
       "<h1>Header</h1>\n\n<hr/>\n"
     )
   }
-
-	#else
-	static var allTests : [(String, (PerfectMarkdownTests) -> () throws -> Void)] {
-			return [
-					("testTitle", testTitle),
-					("testList", testList),
-					("testNumbers", testNumbers),
-					("testInlineCode", testInlineCode),
-					("testCodes", testCodes),
-					("testLink", testLink),
-					("testTable", testTable)
-			]
-	}
-	#endif
 }

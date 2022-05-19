@@ -1,6 +1,5 @@
 import upskirt
 
-#if swift(>=5.0)
 public struct MarkdownExtensionOptions: OptionSet {
   public let rawValue: UInt32
   public init(rawValue: UInt32) {
@@ -56,4 +55,3 @@ public extension HTMLRenderOptions {
   static let none = HTMLRenderOptions([])
   static let `default` = Self.none
 }
-#endif

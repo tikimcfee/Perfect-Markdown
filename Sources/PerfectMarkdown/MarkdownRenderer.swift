@@ -1,6 +1,5 @@
 import upskirt
 
-#if swift(>=5.0)
 public class MarkdownRenderer {
   typealias InputBuffer = IOBuffer
   typealias OutputBuffer = IOBuffer
@@ -94,4 +93,3 @@ public class MarkdownRenderer {
     return outputBuffer.value
   }
 }
-#endif
